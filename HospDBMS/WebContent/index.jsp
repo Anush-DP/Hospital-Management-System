@@ -24,7 +24,7 @@
         <div class="admin">
             <div class="ui icon">
                     <i class=" large user  icon"></i>Admin login
-                    <a href="https://www.w3schools.com/html/html_links.asp">
+                    <a href="admin-login.jsp">
                    <button  class="ui blue button">LOGIN</button>
                     </a>
             </div>
