@@ -18,16 +18,17 @@ String pswd=request.getParameter("pwd");
 	String pemail=request.getParameter("pemail");
 	String pno=request.getParameter("pno");
 	String state=request.getParameter("state");
+	String Name=request.getParameter("Name");
 	String name=request.getParameter("name");
+
 	Class.forName("com.mysql.jdbc.Driver");
 java.sql.Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hospital_database","root","1234"); 
 Statement st= con.createStatement(); 
-st.executeUpdate("insert into patients_info values ('"+name+"','"+pemail+"',"+pno+",'"+street+"','"+locality+"', '"+aadhar+"','"+state+"','"+country+"','"+pswd+"')"); 
+st.executeUpdate("update patients_info set name='"+name+"',country='"+country+"',state='"+state+"',email='"+pemail+"',password='"+pswd+"',street='"+street+"',locality='"+locality+"',aadhar="+aadhar+",contact_no="+pno+" where name='"+Name+"'"); 
 %>
-<br><br>
+<br>
 <b><center>Success</center></b><br>
-<center><a href="newuser.html">Homepage</a></center><br>
-<center><a href="viewptnts.jsp">View patients</a></center>
-
+<center><a href="plogin.jsp">Back to login page</a></center><br>
+<center><a href="/HospDBMS">Home</a></center><br>
 </body>
 </html>

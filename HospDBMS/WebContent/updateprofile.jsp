@@ -12,22 +12,55 @@
     <link rel="stylesheet" href="newser.css">
 </head>
 <body >
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.Connection"%>
+<%
+String Name = (String)session.getAttribute("Name");
+String userID=null;
+String driverName = "com.mysql.jdbc.Driver";
+String connectionUrl = "jdbc:mysql://localhost:3306/";
+String dbName = "hospital_database";
+String userId = "root";
+String password = "1234";
+
+try {
+Class.forName(driverName);
+} catch (ClassNotFoundException e) {
+e.printStackTrace();
+}
+
+Connection connection = null;
+Statement statement = null;
+ResultSet resultSet = null;
+%>
   <!--new user register page-->
 <div class="new">
-        <form class="ui form" method="post" action="success.jsp">
+        <form class="ui form" method="post" action="successupdate.jsp?Name=<%=Name%>">
         <br><br>
+        <h1>User | Update profile</h1><br>
                 <h3 class="ui dividing header">Fill in  Information</h3>
                 <div class="field">
                   <div class="two fields">
                     <div class="field">
+                    <%
+try{ 
+connection = DriverManager.getConnection(connectionUrl+dbName, userId, password);
+statement=connection.createStatement();
+String sql ="SELECT * FROM patients_info where name='"+Name+"'";
+
+resultSet = statement.executeQuery(sql);
+while(resultSet.next()){
+%>
                     
                   <label>Name</label>
-                      <input type="text" name="name" placeholder="Enter your name">
+                      <input type="text" name="name" placeholder="Enter your name" value="<%=resultSet.getString("name") %>">
                     </div>
                     <div class="field">
                     
                   <label>Password</label>
-                      <input type="text" name="pwd" placeholder="Enter a password">
+                      <input type="text" name="pwd" placeholder="Enter a password" value="<%=resultSet.getString("password") %>">
                     </div>
                    
                   </div>
@@ -35,26 +68,26 @@
                 <div class="two fields">
                   <div class="field">
                     <label>Contact number</label>
-                    <input type="number" name="pno" placeholder="phone number">
+                    <input type="number" name="pno" placeholder="phone number" value="<%=resultSet.getString("contact_no") %>">
                     
                   </div>
                   <div class="field">
                     <label for="">Email id</label>
-                    <input type="text" name="pemail" placeholder="email id">
+                    <input type="text" name="pemail" placeholder="email id" value="<%=resultSet.getString("email") %>">
                   </div>
                 </div>
                 <div class= "three fields">
                     <div class="field">
                   <label>Patient Address</label>
-                    <input type="text" name="street" placeholder="Street Address">
+                    <input type="text" name="street" placeholder="Street Address" value="<%=resultSet.getString("street") %>">
                     </div>
                     <div class=" field">
                       <label for="">locality/Area</label>
-                      <input type="text" name="area" placeholder="Area">
+                      <input type="text" name="area" placeholder="Area" value="<%=resultSet.getString("locality") %>">
                     </div>
                     <div class="field">
                       <label for="">Adhaar number</label>
-                      <input type="number" name="aadhar" placeholder="adhaar number">
+                      <input type="number" name="aadhar" placeholder="adhaar number" value="<%=resultSet.getString("aadhar") %>">
                     </div>
                  
                 </div>
@@ -62,7 +95,7 @@
                   <div class="field">
                     <label>State</label>
                     <select class="ui fluid dropdown" name="state">
-                      <option value="state" >State</option>
+                      <option value="<%=resultSet.getString("state") %>" >State</option>
                   <option value="AP">Andhra</option>
                   <option value="Arunachal">Arunachal pradesh</option>
                   <option value="Assam">Assam</option>
@@ -121,7 +154,7 @@
                    <div class="field">
                     
                     <select class="ui fluid dropdown" name="country">
-                      <option value="country">Country</option>
+                      <option value="<%=resultSet.getString("country") %>">Country</option>
                   <option value="India">India</option>
                   <option value="Bangladesh">Bangaldesh</option>
                   <option value="Pakistan">Pakistan</option>
@@ -130,9 +163,18 @@
                   </div>
                      </div>
                   </div>
-               <a href="success.jsp">
-                   <center><button  class="ui green button">Submit ></button></center>
-                    </a>
+                  <%
+}
+
+} catch (Exception e){
+e.printStackTrace();
+}
+%>
+               <center><a href="successupdate.jsp">
+                   <button  class="ui green button">Submit ></button></a>
+                  
+                   </center>
+                    
        
               </form>
             </div>  

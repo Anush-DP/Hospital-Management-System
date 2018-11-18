@@ -1,9 +1,8 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Admin  | Dashboard</title>
+		<title>Doctor  | Dashboard</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -28,104 +27,60 @@
 
 	</head>
 	<body style="background-image:url(https://www.elegantthemes.com/blog/wp-content/uploads/2013/09/bg-9-full.jpg)">
-	<%@ page import ="java.sql.*" %>
-<%@ page import ="javax.sql.*" %>
-<%
-Class.forName("com.mysql.jdbc.Driver");
-java.sql.Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hospital_database","root","1234"); 
-Statement st= con.createStatement(); 
-String pt=null,dt=null,at=null;
-ResultSet resultSet;
-String sql ="SELECT count(*) FROM patients_info";
-resultSet = st.executeQuery(sql);
-while(resultSet.next()){
-	pt=Integer.toString(resultSet.getInt(1));
-}
-%>
 		<div id="app">		
+			<div class="app-content">
+				
+						
+				<!-- end: TOP NAVBAR -->
 				<div class="main-content" >
 					<div class="wrap-content container" id="container">
 						<!-- start: PAGE TITLE -->
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<b><h1 class="mainTitle">Admin | Dashboard</h1></b>
+									<h1 class="mainTitle">Doctor | Dashboard</h1>
 																	</div>
+								
 							</div>
 						</section>
 						<!-- end: PAGE TITLE -->
 						<!-- start: BASIC EXAMPLE -->
 							<div class="container-fluid container-fullw bg-white">
 							<div class="row">
+								
 								<div class="col-sm-4">
 									<div class="panel panel-white no-radius text-center">
 										<div class="panel-body">
-											<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-smile-o fa-stack-1x fa-inverse"></i> </span>
-											<h2 class="StepTitle">Manage Patients</h2>
-											
-											<p class="links cl-effect-1">
-												<a href="mangptnts.jsp">Total patients: <%=pt%></a>
-											</p>
-										</div>
-									</div>
-								</div>
-								<%
-								resultSet = st.executeQuery("select count(*) from doc_info");
-while(resultSet.next()){
-	dt=Integer.toString(resultSet.getInt(1));
-}
-%>
-								<div class="col-sm-4">
-									<div class="panel panel-white no-radius text-center">
-										<div class="panel-body">
-											<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-users fa-stack-1x fa-inverse"></i> </span>
-											<h2 class="StepTitle">Manage Doctors</h2>
+											<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-paperclip fa-stack-1x fa-inverse"></i> </span>
+											<h2 class="StepTitle">My Appointments</h2>
 										
 											<p class="cl-effect-1">
-												<a href="mngdoc.jsp">
-												
-											Total Doctors: <%=dt %>
-												</a>
-												
-											</p>
-										</div>
-									</div>
-								</div>
-								<%
-								resultSet = st.executeQuery("select count(*) from apn_info");
-while(resultSet.next()){
-	at=Integer.toString(resultSet.getInt(1));
-}
-%>
-								<div class="col-sm-4">
-									<div class="panel panel-white no-radius text-center">
-										<div class="panel-body">
-											<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-terminal fa-stack-1x fa-inverse"></i> </span>
-											<h2 class="StepTitle"> Appointments</h2>
-											
-											<p class="links cl-effect-1">
-												<a href="apn-his.jsp?id=1">
-													
-												
-
-											Total Appointments :<%=at %>
-										
+												<a href="appointment-history.php">
+													View Appointment History
 												</a>
 											</p>
 										</div>
 									</div>
 								</div>
+								
 							</div>
 						</div>
 			
 					
 					
 						
+						
+					
+						<!-- end: SELECT BOXES -->
+						
 					</div>
 				</div>
 			</div>
+			<!-- start: FOOTER -->
 			
+			<!-- end: SETTINGS -->
 		</div>
-
+		<!-- start: MAIN JAVASCRIPTS -->
+	
 	</body>
 </html>

@@ -21,13 +21,13 @@
 <body style="background-image:url(https://www.elegantthemes.com/blog/wp-content/uploads/2013/09/bg-9-full.jpg)">
   <!--patient login page--><br><br><br>
  		<center><div class="logo margin-top-30">
-				<h2> HospDBMS | Doc Login</h2><br>
+				<h2> HospDBMS | Patient Login</h2><br>
 		</div></center>
 
     <div class="ui container login">
         <div class="ui red centered card">
    
-                 <form class="ui  form log" method="post" action="/HospDBMS/Doclogin">
+                 <form class="ui  form log" method="post" action="/HospDBMS/Plogin">
                          <div class="field">
                          <div  class="sixteen wide field">  
               <br>
@@ -38,9 +38,11 @@
                          <div class="field">
                         <div  class="sixteen wide field">   
                            <label class="ui header">Password</label>
-                           <input type="password" name="pwd" placeholder="password">
+                           <input type="password" name="pwd" placeholder="password" required="required">
                          </div>
                          </div>
+         
+
                          <div class="field">
                           <p class="header">Don't have an account?
                           <a href="newuser.html" id="field1">Create account</a></p>
@@ -53,5 +55,6 @@
                        
          </div>
      </div>     
+
 </body>
 </html>
