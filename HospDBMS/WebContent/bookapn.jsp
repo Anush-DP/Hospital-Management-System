@@ -24,12 +24,6 @@
 		<link rel="stylesheet" href="assets/css/plugins.css">
 		<link rel="stylesheet" href="assets/css/themes/theme-1.css" id="skin_color" />
 		
-
-
-
-
-
-
 	</head>
 	<body style="background-image:url(https://www.elegantthemes.com/blog/wp-content/uploads/2013/09/bg-9-full.jpg)">
 		<div id="app">		
@@ -48,8 +42,12 @@
 									</li>
 									<li class="active">
 										<span>Book Appointment</span>
+									
 									</li>
+									
+									
 								</ol>
+								
 						</section>
 						<!-- end: PAGE TITLE -->
 						<!-- start: BASIC EXAMPLE -->
@@ -64,54 +62,43 @@
 													<h5 class="panel-title">Book Appointment</h5>
 												</div>
 												<div class="panel-body">
-								<p style="color:red;"><?php echo htmlentities($_SESSION['msg1']);?>
-								<?php echo htmlentities($_SESSION['msg1']="");?></p>	
-													<form role="form" name="book" method="post" >
-														
-
-
+													<form method="post" action="successbapn.jsp?pname=Ajax">
+													
 <div class="form-group">
 															<label for="DoctorSpecialization">
 																Doctor Specialization
 															</label>
-							<select name="Doctorspecialization" class="form-control" required="required">
+							<select name="dspec" class="form-control" required="required">
 																<option value="">Select Specialization</option>
-
-															
+																<option value="Brain surgery">Brain surgery</option>
+																<option value="Heart surgery">Heart surgery</option>
+																<option value="Plastic surgery">Plastic surgery</option>
+																<option value="Cancer treatment">Cancer treatment</option>
 																
+																<option value="Basic treatment">Basic treatment</option>
 															</select>
 														</div>
-
-
-
 
 														<div class="form-group">
 															<label for="doctor">
 																Doctors
 															</label>
-						<select name="doctor" class="form-control" id="doctor" onChange="getfee(this.value);" required="required">
+						<select name="dname" class="form-control" required="required">
+							
 						<option value="">Select Doctor</option>
+						<option value="Doc1">Doc1</option>
+						<option value="Doc2">Doc2</option>
+						<option value="Doc3">Doc3</option>
+					
 						</select>
 														</div>
 
-
-
-
-
-														<div class="form-group">
-															<label for="consultancyfees">
-																Consultancy Fees
-															</label>
-					<select name="fees" class="form-control" id="fees"  readonly>
-						
-						</select>
-										</div>
-													
+														
 <div class="form-group">
 															<label for="AppointmentDate">
 																Date
 															</label>
-<input class="form-control datepicker" name="appdate"  required="required" data-date-format="yyyy-mm-dd">
+<input class="form-control datepicker" name="date"  required="required" data-date-format="yyyy-mm-dd"><b>Format: YYYY-MM-DD</b>
 	
 														</div>
 														
@@ -121,7 +108,7 @@
 														Time
 													
 															</label>
-			<input class="form-control" name="apptime" id="timepicker1" required="required">eg : 10:00 PM
+			<input class="form-control" name="time" id="timepicker1" required="required"><b>Format: HH:MM:SS in 24hr format</b>
 														</div>														
 														
 														<button type="submit" name="submit" class="btn btn-o btn-primary">
@@ -138,7 +125,6 @@
 					</div>
 				</div>
 			</div>
-			
-		</div>
+	
 	</body>
 </html>

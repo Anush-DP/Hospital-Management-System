@@ -25,6 +25,15 @@ String pswd=request.getParameter("pwd");
 java.sql.Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hospital_database","root","1234"); 
 Statement st= con.createStatement(); 
 st.executeUpdate("update patients_info set name='"+name+"',country='"+country+"',state='"+state+"',email='"+pemail+"',password='"+pswd+"',street='"+street+"',locality='"+locality+"',aadhar="+aadhar+",contact_no="+pno+" where name='"+Name+"'"); 
+try{
+	st.executeUpdate("update apn_info set pname='"+name+"' where pname='"+Name+"'"); 
+
+}catch(Exception e){
+
+e.printStackTrace();
+System.out.println("asasdf");
+}
+
 %>
 <br>
 <b><center>Success</center></b><br>

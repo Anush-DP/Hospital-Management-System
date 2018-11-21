@@ -55,7 +55,7 @@
 											<h2 class="StepTitle">My Appointments</h2>
 										
 											<p class="cl-effect-1">
-												<a href="appointment-history.php">
+												<a href="apn-his.jsp?id=2">
 													View Appointment History
 												</a>
 											</p>

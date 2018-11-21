@@ -26,8 +26,8 @@ st.executeUpdate("insert into patients_info values ('"+name+"','"+pemail+"',"+pn
 %>
 <br><br>
 <b><center>Success</center></b><br>
-<center><a href="newuser.html">Homepage</a></center><br>
-<center><a href="viewptnts.jsp">View patients</a></center>
+<center><a href="plogin.jsp">Back to login page</a></center><br>
+<center><a href="/HospDBMS">Home</a></center>
 
 </body>
 </html>

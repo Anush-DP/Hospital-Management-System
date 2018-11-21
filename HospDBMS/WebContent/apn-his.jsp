@@ -36,6 +36,8 @@ String dbName = "hospital_database";
 String userId = "root";
 String password = "1234";
 
+String sql=null;
+
 try {
 Class.forName(driverName);
 } catch (ClassNotFoundException e) {
@@ -44,10 +46,17 @@ e.printStackTrace();
 int id=Integer.parseInt(request.getParameter("id"));
 String a=null;
 if(id==1)
-{  a=";";}
+{ 
+sql ="SELECT * FROM apn_info";
+}
+else if(id==2){
+	String name=(String)session.getAttribute("Name");
+	sql ="SELECT * FROM apn_info where dname='"+name+"'";
+}
 else {
 	String name=(String)session.getAttribute("Name");
 	a=" where pname='"+name+"'";
+	sql ="SELECT * FROM apn_info"+a;
 }
 Connection connection = null;
 Statement statement = null;
@@ -93,7 +102,6 @@ try{
 connection = DriverManager.getConnection(connectionUrl+dbName, userId, password);
 statement=connection.createStatement();
 
-String sql ="SELECT * FROM apn_info"+a;
 resultSet = statement.executeQuery(sql);
 while(resultSet.next()){
 %>
