@@ -3,10 +3,10 @@ This is a hospital management user interface for managing, monitoring and contro
 
 # Screenshots
 <h2>Homepage</h2>
- <img src="https://i.imgur.com/mPmvsYL.jpg" width=70% height=70%> 
+ <img src="https://i.imgur.com/mPmvsYL.jpg" width=90% height=90%> 
  <br><h2>Login pages</h2>
- <img src="https://i.imgur.com/Bd5zK2C.jpg" width=70% height=70%>
- <img src="https://i.imgur.com/1Ejc88h.jpg" width=70% height=70%> 
+ <img src="https://i.imgur.com/Bd5zK2C.jpg" width=90% height=90%>
+ <img src="https://i.imgur.com/1Ejc88h.jpg" width=90% height=90%> 
   <br><h2>Dashboard</h2>
- <img src="https://i.imgur.com/k7oYwQh.jpg" width=70% height=70%>
+ <img src="https://i.imgur.com/k7oYwQh.jpg" width=90% height=90%>
  
