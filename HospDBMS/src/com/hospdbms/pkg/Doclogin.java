@@ -57,7 +57,7 @@ public class Doclogin extends HttpServlet {
 				pwdd=resultSet.getString("psswd");
 				}
 		if(psswd.equalsIgnoreCase(pwdd))
-		{	session.setAttribute("DName",dname);
+		{	session.setAttribute("Name",dname);
 			request.getRequestDispatcher("docpage.jsp").forward(request, response);
 		}
 	
