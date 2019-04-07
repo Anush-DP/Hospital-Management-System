@@ -6,8 +6,9 @@ This is a hospital management user interface for managing, monitoring and contro
 # Screenshots
 
 <h2>Homepage</h2>
+Click on image to see demo video.
 
- [![Hospital Management System](https://i.imgur.com/mPmvsYL.jpg)](https://www.youtube.com/watch?v=_EGwyT6rFXY&t= "Everything Is AWESOME")
+ [![Hospital Management System](https://i.imgur.com/mPmvsYL.jpg)](https://www.youtube.com/watch?v=_EGwyT6rFXY&t=)
 <h2>Login pages</h2> 
 <img src="https://i.imgur.com/Bd5zK2C.jpg" width=90% height=90%>
  <img src="https://i.imgur.com/1Ejc88h.jpg" width=90% height=90%> <br>
