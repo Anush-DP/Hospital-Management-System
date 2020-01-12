@@ -21,6 +21,7 @@ country varchar(20),
 password varchar(25)
 );
 
+#create table for storing doctor info
 create table doc_info
 (
 dname varchar(20),
@@ -38,6 +39,8 @@ apdate date,
 aptime time
 );
 
+
+# following lines are for testing the DB
 insert into patients_info values('bb','blabla',1234567890,'a','a','1a','a','a','123456');
 insert into doc_info values('Doc1','Heart Surgery','123');
 insert into doc_info values('Doc2','Brain surgery','dr@sheldon');
